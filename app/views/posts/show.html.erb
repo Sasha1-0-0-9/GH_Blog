@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<div class="image">
+	<img src='<%= @post.image %>' width='300px'/>
+</div>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<h4>Views: <%= @post.views%></h4>
+
+<div class='cont add_comment'>
+  <h4>New Comment</h4>
+  <%= render 'comment_form' %>
+</div>
+
+<div class='cont comment_list'>
+  <h4>Comments: <%= @post.comments.count%></h4>
+  
+  <%= render 'comments_list' %>
+</div>

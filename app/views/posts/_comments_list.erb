@@ -1,0 +1,49 @@
+<script>
+  $(function(){
+    $("#comments_select").change(function(){
+      $('#comments_show').submit()
+    })
+     $(".edit_comment").click(function(){
+      $(this).parent().find('.update_comment').removeClass("invisible")
+      $(this).addClass('invisible')
+    })
+  })
+</script>
+
+<form action="<%= post_path(@post) %>" method='get' id='comments_show'>
+  <div class='field'>
+    <select name='comments_status' class='pressed-button' id='comments_select'>
+      <option <%= @comment_status == 'published' ? 'selected' : '' %> >Published</option>
+      <option <%= @comment_status == 'unpublished' ? 'selected' : '' %> >Unpublished</option>
+    </select> 
+  </div>
+</form>
+
+<% @comments.each do |comment| %>
+  <div class='comment'>
+    <div>
+      <%= comment.body %>
+    </div>
+    <p>
+      <b><%= comment.author.full_name %></b>
+    </p>
+    <div>
+     <i>  updated <%= distance_of_time_in_words(comment.updated_at, Time.now) %> ago</i>
+    </div>
+  <button class='butn edit_comment'>Edit Comment</button>
+      <% if comment.status == 'unpublished' %>
+      <div class='butn' id="pos">
+        <%= link_to 'Publish Comment', publish_post_comment_path(@post.id, comment.id), method: :post %>
+      </div>
+    <% end %>
+      <div class='butn' id="pos">
+      <%= link_to "Destroy Comment", [comment.post, comment],
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+    </div>
+    <div class='cont add_comment update_comment invisible'>
+      <h4>Edit Comment</h4>
+      <%= render 'comment_form', comment: comment%>
+    </div>
+ </div>
+<% end %>

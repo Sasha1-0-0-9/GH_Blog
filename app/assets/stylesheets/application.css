@@ -1,0 +1,154 @@
+body{margin-top:1px;
+	color: white;
+    background: #6819e8; /* Old browsers */
+    background: -moz-linear-gradient(left, #6819e8 0%, #7437d0 35%, #615fde 68%, #6980f2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #6819e8 0%,#7437d0 35%,#615fde 68%,#6980f2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #6819e8 0%,#7437d0 35%,#615fde 68%,#6980f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+header{
+	position: relative;
+	right:33px;
+}
+
+table {
+	width: 50%; /* Ширина таблицы */
+    background: white; /* Цвет фона таблицы */
+    color: white; /* Цвет текста */
+    border-spacing: 1px; /* Расстояние между ячейками */
+}
+td, th {
+    background: #a38ef5; /* Цвет фона ячеек */
+    padding: 5px; /* Поля вокруг текста */
+}
+/* =Jumbotron Main
+-------------------------------------------------------------- */
+.jumbotron.jumbotron-main { 
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    margin:0;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    background: #6819e8; /* Old browsers */
+    background: -moz-linear-gradient(left, #6819e8 0%, #7437d0 35%, #615fde 68%, #6980f2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #6819e8 0%,#7437d0 35%,#615fde 68%,#6980f2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #6819e8 0%,#7437d0 35%,#615fde 68%,#6980f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6819e8', endColorstr='#6980f2',GradientType=1 ); /* IE6-9 */
+}
+
+.jumbotron.jumbotron-main hr {
+    border-width: 120px 0px;
+    border-style: dotted none;
+    border-color: rgba(255, 255, 255, 0.35);
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    width: 49px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    clear: both;
+}
+
+.jumbotron.jumbotron-main a {
+    color: #fff;
+}
+
+.center-vertically {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.center-vertically-holder { 
+    display: table;
+    height: 100%;
+}
+
+.scroll-indicator {
+    padding-top:6px;
+    display: inline-block;
+    width: 50px;
+}
+
+.arrow-scroll-indicator {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.parallax-window {
+    background: transparent;
+}
+.field{
+    text-align: center;
+}
+
+
+.butn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #4247d6;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: #4247d6;
+  transition: .2s ease-in-out;
+}
+.butn:before {
+  content: "";
+  background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -8px;
+  left: -75px;
+  transform: skewX(-45deg);
+}
+.butn:hover {
+  background: #4247d6;
+  color: #fff;
+}
+.butn:hover:before {
+  left: 150px;
+  transition: .5s ease-in-out;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+a:hover{
+  color: white;
+}
+a:active{
+  color: white;
+}
+
+#pos{
+	position: relative;
+	bottom: -29px;
+}
+.form-control{
+	background-color: #e0c0f0;
+}
