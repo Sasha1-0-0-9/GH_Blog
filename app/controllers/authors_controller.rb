@@ -13,6 +13,18 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def show
+    @author = current_author
+  end
+
+  
+  def save_profile
+    @author = current_author
+    @author.update(author_params)
+    redirect_to profile_authors_path
+  end
+
+
   private
 
   ## Strong Parameters

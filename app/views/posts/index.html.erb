@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
+<div>
+<%= form_tag posts_path, :method => 'get' do %>
+<%= text_field_tag :search, params[:search], placeholder: 'Search' %>
+<%= submit_tag "Search",  class: 'butn'%>
+
+<% end %>
+<%= link_to 'Press me if you want to see all posts', posts_path %>
+</div>
 
 <table border="2">
   <thead>

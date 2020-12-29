@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.select(:name, options_for_select(Author.pluck(:first_name)))%>
+    <%= form.select(:name, options_for_select(Author.pluck(:email)))%>
   </div>
 
   <div class="field">

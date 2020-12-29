@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  helper_method :current_author
+  helper_method :authorize
+
   private
 
   def current_author
