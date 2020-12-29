@@ -1,4 +1,9 @@
-<div class="field">
+<div class='cont'>
+  <%= form_with model: @author, url: save_profile_authors_path do |form| %>
+    <%= render "authors/avatar", author: @author %>
+    <div class="field">
+      <%= form.label :avatar%>
+      <%= form.text_field :avatar, class: 'form-control', rows: "3"%>
       <i style="color: gray">put a link to your avatar here</i>
     </div>
     <div class="field">
@@ -10,5 +15,7 @@
       <%= form.text_field :last_name, class: 'form-control', rows: "3"%>
     </div>
     <div class="actions " >
-      <%= form.submit 'Update profile', class: "btn btn-success"%>
+      <%= form.submit 'Update profile', class: "butn"%>
     </div>
+  <% end %>
+</div>
