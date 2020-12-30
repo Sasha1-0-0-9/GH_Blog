@@ -13,22 +13,20 @@ class AuthorsController < ApplicationController
     end
   end
 
-  def show
+  def profile
     @author = current_author
   end
 
-  
   def save_profile
     @author = current_author
     @author.update(author_params)
     redirect_to profile_authors_path
   end
 
-
   private
 
   ## Strong Parameters
   def author_params
-    params.require(:author).permit(:email, :password, :password_confirmation)
+    params.require(:author).permit(:avatar, :first_name, :last_name, :email, :password, :password_confirmation)
   end
 end

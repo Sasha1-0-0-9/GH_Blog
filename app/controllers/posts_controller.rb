@@ -1,10 +1,17 @@
 class PostsController < ApplicationController
-  before_action :set_public_post, only: %i[show]
-  before_action :set_author_post, only: %i[edit update destroy]
+  before_action :set_post, only: %i[show edit update destroy]
+  before_action :authorize, only: %i[edit update create destroy]
+  before_action :add_view, only: %i[index show]
+
+  def add_view
+    unless current_author
+      cookies[:views] = cookies[:views].present? ? cookies[:views].to_i + 1 : 1
+      @show_register = cookies[:views].to_i % 5 == 0
+    end
+  end
 
   def index
     @posts = Post.search(params[:search])
-
   end
 
   def show
@@ -25,8 +32,8 @@ class PostsController < ApplicationController
 
   def edit; end
 
- def create
-    @post = Post.new(post_params.merge(author_id: current_author.id))
+  def create
+    @post = Post.new(post_params)
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
@@ -49,15 +56,12 @@ class PostsController < ApplicationController
 
   private
 
-  def set_public_post
+  def set_post
     @post = Post.find(params[:id])
   end
 
-  def set_author_post
-    @post = Post.where(author_id: current_author.id).find(params[:id])
+  def post_params
+    params.require(:post).permit(:name, :title, :content, :image, :author_id)
   end
 
-  def post_params
-    params.require(:post).permit(:name, :title, :content, :image)
-  end
 end

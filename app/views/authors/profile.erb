@@ -1,3 +1,7 @@
+  <%= link_to 'Home', posts_path %>
+  <% if current_author.first_name.nil? %>
+  <%= current_author.first_name = "Useeeer" %>
+<% end %>
 <div class='cont'>
   <%= form_with model: @author, url: save_profile_authors_path do |form| %>
     <%= render "authors/avatar", author: @author %>
@@ -14,7 +18,7 @@
       <%= form.label :last_name%>
       <%= form.text_field :last_name, class: 'form-control', rows: "3"%>
     </div>
-    <div class="actions " >
+    <div class="actions ">
       <%= form.submit 'Update profile', class: "butn"%>
     </div>
   <% end %>

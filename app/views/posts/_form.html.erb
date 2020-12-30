@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.select(:name, options_for_select(Author.pluck(:email)))%>
-  </div>
-
-  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
@@ -31,7 +26,18 @@
     <%= form.text_field :image %>
   </div>
 
+        <div class="nvisible">
+    <%= form.label :avatar%>
+    <%= form.text_field :avatar, value: current_author.avatar%>
+  </div>
+
   <div class="actions" style="text-align: center">
     <%= form.submit %>
   </div>
+    <div class="invisible">
+    <%= form.label :name%>
+    <%= form.text_field :name, value: current_author.full_name , readonly: true%>
+  </div>
+
+
 <% end %>

@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authorize, only: %i[edit update create destroy]
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params.merge(author_id: current_author.id))
