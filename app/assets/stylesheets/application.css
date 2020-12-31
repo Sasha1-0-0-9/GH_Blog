@@ -171,14 +171,14 @@ a:active{
 
 #crop{
     object-fit: cover;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 .username{
   position: relative;
-  bottom: 60px;
-  left: 60px;
+  bottom: 110px;
+  left: 110px;
 }
 
 .comment-body{
@@ -187,4 +187,33 @@ a:active{
 .status{
   position: relative;
   bottom: 45px;
+}
+
+#dest{
+  position: relative;
+  bottom: -27px;
+}
+#publ{
+  position: relative;
+  bottom: 107px;
+  left: 500px;
+}
+
+#cont{
+  position: relative;
+  right: 13px;
+}
+
+#formimg{
+  position: relative;
+  right: 6px;
+}
+.uploader{
+  position: relative;
+  left: 95px;
+}
+
+#qqq{
+  position: relative;
+  left: 20px;
 }

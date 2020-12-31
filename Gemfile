@@ -60,3 +60,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'faker', '~> 2.15.1'
+
+gem 'carrierwave'
+gem 'cloudinary'

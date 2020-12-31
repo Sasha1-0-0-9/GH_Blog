@@ -1,5 +1,10 @@
+<% if !current_author.nil? %>
 <h1>New Post</h1>
 
 <%= render 'form', post: @post %>
 
 <%= link_to 'Back', posts_path %>
+<% else %>
+<h5><%= link_to "Log In", login_path %> or <%= link_to "Sign Up", signup_path %> to create new post</h5>
+<%= link_to 'Back', posts_path %>
+<% end %>

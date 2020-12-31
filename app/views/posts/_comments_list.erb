@@ -43,13 +43,14 @@
         <% if !current_author.nil? && current_author.id == comment.author.id && less_than_hour %>
 
           <button class='butn edit_comment'>Edit Comment</button>
-                 <div class='butn'>
+                 <div class='butn' id="dest">
             <%= link_to 'Destroy Comment', [comment.post, comment],
                       method: :delete,
                       data: { confirm: "Are you sure?" } %>
           </div>  
           <% if comment.status == 'unpublished' %>
-            <div class='butn'>
+          <h4>Comments: <%= @post.comments.count%></h4>
+            <div class='butn' id="publ">
               <%= link_to 'Publish Comment', publish_post_comment_path(@post.id, comment.id), method: :post %>
             </div>
           <% end %> 

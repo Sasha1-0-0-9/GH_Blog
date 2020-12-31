@@ -16,28 +16,31 @@
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field" id="cont">
     <%= form.label :content %>
     <%= form.text_area :content %>
   </div>
 
-  <div class="field">
+  <div class="field" id="formimg">
     <%= form.label :image %>
     <%= form.text_field :image %>
   </div>
 
-        <div class="nvisible">
-    <%= form.label :avatar%>
-    <%= form.text_field :avatar, value: current_author.avatar%>
-  </div>
+  <fieldset class="uploader" style="text-align: center;">
+  <%= form.label :img, 'img' %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.file_field :img%>
+</fieldset>
 
-  <div class="actions" style="text-align: center">
-    <%= form.submit %>
+
+
+
+  <div class="actions" style="text-align: center" id="qqq">
+    <%= form.submit nil, class: "butn" %>
   </div>
     <div class="invisible">
     <%= form.label :name%>
     <%= form.text_field :name, value: current_author.full_name , readonly: true%>
   </div>
-
 
 <% end %>
