@@ -23,9 +23,8 @@
         <div class="container center-vertically-holder">
           <div class="center-vertically">
             <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 text-center">
-              <h1 class="scaleReveal" data-sr-id="46" style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; transition: transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; ">GeekHub blog on RoR
+              <h1 class="scaleReveal" data-sr-id="46" style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; transition: transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; ">
               </h1>
-
               <hr class="bottomReveal" data-sr-id="1" style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; transition: transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; ">
               <p class="bottomReveal" data-sr-id="2" style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; transition: transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; "></p>
               <a href="#ideology" data-id="ideology" class="scroll-link">
@@ -34,10 +33,12 @@
                   <span class="ion-android-arrow-down arrow-scroll-indicator"></span>
                 </div>
               </a>
+
             </div>
           </div>
         </div>
       </div>
+                                  <h1 class="headtext" style="text-align: center;"><strong>GeekHub blog on RoR</strong></h1>
     </header>
 
     <div class="loginfo">
@@ -50,6 +51,13 @@
       <%= link_to "Log In", login_path %>
       <% end %>
     </div>
+
+        <% if !current_author.nil? %>
+        <h4>Welcome <%= current_author.full_name %></h4>
+                          <div class='img-hed'>
+                            <%= render "authors/avatar", author: current_author, class: 'user-avatar' %>
+                              </div>
+                              <% end %>
 
     <%= yield %>
     <%= javascript_pack_tag 'particles'%>

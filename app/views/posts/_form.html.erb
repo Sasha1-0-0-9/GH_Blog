@@ -26,6 +26,16 @@
     <%= form.text_field :image %>
   </div>
 
+    <div class="field" id="formimg">
+    <%= form.label :image %>
+    <%= form.text_field :main_image %>
+  </div>
+
+    <div class="field" id="formimg">
+    <%= form.label :image %>
+    <%= form.text_field :additional_image %>
+  </div>
+
   <fieldset class="uploader" style="text-align: center;">
   <%= form.label :img, 'img' %>
   <%= form.hidden_field :image_cache %>

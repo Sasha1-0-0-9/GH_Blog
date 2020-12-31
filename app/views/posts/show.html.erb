@@ -22,9 +22,12 @@
 </p>
 
 
-<div class="image">
-  <img src='<%= @post.img %>' width='900px'/><br>
-	<img src='<%= @post.image %>' width='300px'/>
+
+<div class="image" style="text-align: center;">
+  <img src='<%= @post.image %>' width='400px'/>
+  <img src='<%= @post.main_image %>' width='600px'/>
+  <img src='<%= @post.additional_image %>' width='400px'/>
+  <img src="<%=@post.img%>"/>
 </div>
 
 <p>

@@ -161,7 +161,7 @@ a:active{
 .loginfo{
   position: relative;
   text-align: right;
-  bottom: 380px;
+  bottom: 400px;
   right: 50px;
 }
 
@@ -216,4 +216,9 @@ a:active{
 #qqq{
   position: relative;
   left: 20px;
+}
+
+.headtext{
+  position: relative;
+  bottom: 330px;
 }
