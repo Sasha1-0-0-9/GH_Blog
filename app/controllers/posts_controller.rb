@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.search(params[:search])
+    @posts = Post.search(params[:search]).paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   def edit; end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params.merge(author_id: current_author.id))
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
@@ -58,6 +58,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+    def set_author_post
+    @post = Post.where(author_id: current_author.id).find(params[:id])
   end
 
   def post_params

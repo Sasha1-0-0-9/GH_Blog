@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'Person', optional: true, counter_cache: :total_visitors
+  belongs_to :author
   has_many :comments, dependent: :destroy
   validates :title, :content, presence: true, length: { minimum: 5, maximum: 10000 }
 

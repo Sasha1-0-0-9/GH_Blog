@@ -63,3 +63,5 @@ gem 'faker', '~> 2.15.1'
 
 gem 'carrierwave'
 gem 'cloudinary'
+
+gem 'will_paginate', '~> 3.1.0'
