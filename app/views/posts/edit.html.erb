@@ -1,12 +1,6 @@
-<% if !current_author.nil? and @post.author_id == current_author %>
 <h1>Editing Post</h1>
 
 <%= render 'form', post: @post %>
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
-<% else %>
-<h5>This action is forbiden for you</h5>
-<h5><%= link_to "Log In", login_path %> as author of this post to edit it</h5>
-<%= link_to 'Back', posts_path %>
-<% end %>
