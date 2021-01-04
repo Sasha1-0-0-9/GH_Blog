@@ -36,7 +36,6 @@
 </p>
 
 <%= link_to 'Back', posts_path %>
-      <%= link_to 'Destroy post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% if !current_author.nil? && current_author.id == @post.author.id %>
       <%= link_to 'Edit', edit_post_path(@post) %>
