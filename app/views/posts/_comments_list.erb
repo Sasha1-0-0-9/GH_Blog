@@ -24,13 +24,17 @@
     <div>
      <i>  updated <%= distance_of_time_in_words(comment.updated_at, Time.now) %> ago</i>
     </div>
-          <div class="status">
+    <div class="status">
+        <div id="comment_<%= comment.id%>">
+          <button name='true' data-comment_id="<%= comment.id%>" class='like vote btn btn-outline-success'><i class='fa fa-thumbs-up'></i></button>
+          <i><%= comment.count_likes %></i>
+          <button name= 'false' data-comment_id="<%= comment.id%>" class='dislike vote btn btn-outline-danger'><i class='fa fa-thumbs-down'></i></button>
+          <i><%= comment.count_dislikes %></i>
           <%if comment.created_at < comment.updated_at%><b>edited</b> |<%end%>
           <% less_than_hour = comment.created_at >= 1.hour.ago %>
           <% time = distance_of_time_in_words(comment.created_at, Time.now)%>
-        <i> created  <%= time  %> ago</i>
+          <i> created  <%= time  %> ago</i>
         </div>
-
         <% if !current_author.nil? && current_author.id == comment.author.id && less_than_hour %>
 
           <button class='butn edit_comment'>Edit Comment</button>

@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_201_231_143_125) do
+ActiveRecord::Schema.define(version: 20_210_104_180_748) do
+  create_table 'author_comment_votes', force: :cascade do |t|
+    t.integer 'comment_id'
+    t.integer 'author_id'
+    t.boolean 'positive'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['author_id'], name: 'index_author_comment_votes_on_author_id'
+    t.index ['comment_id'], name: 'index_author_comment_votes_on_comment_id'
+  end
+
   create_table 'authors', force: :cascade do |t|
     t.string 'first_name'
     t.string 'last_name'
