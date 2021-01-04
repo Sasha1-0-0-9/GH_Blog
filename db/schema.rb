@@ -10,42 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_31_143125) do
-
-  create_table "authors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "gender"
-    t.datetime "birthday"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "email"
-    t.string "password"
-    t.string "password_digest"
-    t.string "avatar"
+ActiveRecord::Schema.define(version: 20_201_231_143_125) do
+  create_table 'authors', force: :cascade do |t|
+    t.string 'first_name'
+    t.string 'last_name'
+    t.string 'gender'
+    t.datetime 'birthday'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'email'
+    t.string 'password'
+    t.string 'password_digest'
+    t.string 'avatar'
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text "body"
-    t.integer "status", default: 0
-    t.integer "author_id"
-    t.integer "post_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'comments', force: :cascade do |t|
+    t.text 'body'
+    t.integer 'status', default: 0
+    t.integer 'author_id'
+    t.integer 'post_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "name"
-    t.string "title"
-    t.text "content"
-    t.string "image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "views", default: 0
-    t.integer "author_id"
-    t.string "img"
-    t.string "main_image"
-    t.string "additional_image"
+  create_table 'posts', force: :cascade do |t|
+    t.string 'name'
+    t.string 'title'
+    t.text 'content'
+    t.string 'image'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'views', default: 0
+    t.integer 'author_id'
+    t.string 'img'
+    t.string 'main_image'
+    t.string 'additional_image'
   end
-
 end

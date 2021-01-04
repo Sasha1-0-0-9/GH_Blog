@@ -17,13 +17,14 @@ class PostsController < ApplicationController
   def show
     @post.increment(:views)
     @post.save
-    @comment_status = params[:comments_status].to_s.downcase
+    @comments = @post.comments.all
+    # @comment_status = params[:comments_status].to_s.downcase
 
-    @comments = if @comment_status == 'unpublished'
-                  @post.comments.unpublished
-                else
-                  @post.comments.published
-                end
+    # @comments = if @comment_status == 'unpublished'
+    #             @post.comments.unpublished
+    #           else
+    #            @post.comments.published
+    #          end
   end
 
   def new
@@ -60,7 +61,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-    def set_author_post
+  def set_author_post
     @post = Post.where(author_id: current_author.id).find(params[:id])
   end
 

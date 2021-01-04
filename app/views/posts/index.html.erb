@@ -44,7 +44,9 @@
         <td><%= post.views%></td>
       </tr>
     <% end %>
-    <%= will_paginate @posts %>
+<div class="digg_pagination">
+    <%= will_paginate @posts, :container => false %>
+  </div>
   </tbody>
 </table>
 

@@ -25,7 +25,7 @@ class AuthorsController < ApplicationController
 
   private
 
-  ## Strong Parameters
+  # Strong Params
   def author_params
     params.require(:author).permit(:avatar, :first_name, :last_name, :email, :password, :password_confirmation)
   end

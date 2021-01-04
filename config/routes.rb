@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     patch :save_profile, on: :collection
   end
 
+  post 'vote', to: 'votes#vote'
+
   resources :authors
   resources :sessions
   get 'sessions/new'
