@@ -1,10 +1,11 @@
 <% if !current_author.nil? %>
 <% comment ||= @post.comments.build%>
 <div class='comment_form'>
-  <%= form_with model: [ @post, comment ] do |form| %>
+	<%= form_with model: [ @post, comment ], local: false  do |form| %>
     <div class="field">
-      <%= form.text_area :body, class: 'form-control', rows: "3"%>
+      <%= form.text_area :body, class: 'form-control', rows: "2"%>
     </div>
+<%= form.hidden_field :parent_id, value: parent_comment&.id %>
     <div class="actions " >
       <%= form.submit nil, class: "butn"%>
     </div>

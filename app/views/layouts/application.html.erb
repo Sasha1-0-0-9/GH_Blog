@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-                                  <h1 class="headtext" style="text-align: center;"><strong>GeekHub blog on RoR</strong></h1>
+      <h1 class="headtext" style="text-align: center;"><strong>GeekHub blog on RoR</strong></h1>
     </header>
 
     <div class="loginfo">
@@ -54,10 +54,10 @@
 
         <% if !current_author.nil? %>
         <h4>Welcome <%= current_author.full_name %></h4>
-                          <div class='img-hed'>
-                            <%= render "authors/avatar", author: current_author, class: 'user-avatar' %>
-                              </div>
-                              <% end %>
+        <div class='img-hed'>
+          <%= render "authors/avatar", author: current_author, class: 'user-avatar' %>
+        </div>
+        <% end %>
 
     <%= yield %>
     <%= javascript_pack_tag 'particles'%>

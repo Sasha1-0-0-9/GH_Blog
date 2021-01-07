@@ -1,0 +1,41 @@
+@media screen and (min-width: 600px) {  
+  .comment{
+    padding-left: 40px !important;
+  }
+}
+.invisible{
+  display: none !important;
+}
+.comment_form{
+  padding: 10px;
+}
+.comment{
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  word-break: break-word;
+  overflow: hidden;
+  .reply{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  img {
+    width: 50px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover{
+      background: none;
+      color: white;
+    }
+    &:visited{
+      color: white;
+    }
+  }
+  .float{
+    float: left;
+    margin-right: 2%;
+  }
+}

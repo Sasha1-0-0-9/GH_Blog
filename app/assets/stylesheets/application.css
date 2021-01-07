@@ -23,7 +23,7 @@ td, th {
 /* =Jumbotron Main
 -------------------------------------------------------------- */
 .jumbotron.jumbotron-main { 
-    height: 100%;
+    height: 300px;
     width: 100%;
     font-family: 'Roboto', sans-serif;
     color: #fff;
@@ -161,7 +161,7 @@ a:active{
 .loginfo{
   position: relative;
   text-align: right;
-  bottom: 400px;
+  bottom: 350px;
   right: 50px;
 }
 
@@ -220,12 +220,15 @@ a:active{
 
 .headtext{
   position: relative;
-  bottom: 330px;
+  bottom: 190px;
 }
 
-.like i{
-  color: rgb(33, 182, 33);
+.votestatus{
+  position: relative;
+  padding-left: 5px;
 }
-.dislike i{
-  color: rgb(107, 0, 0);
-} 
+
+#down{
+  position: relative;
+  bottom: -25px;
+}

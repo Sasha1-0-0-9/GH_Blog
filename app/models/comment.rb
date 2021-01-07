@@ -2,9 +2,10 @@ class Comment < ApplicationRecord
   belongs_to :post, required: true
   belongs_to :author, required: true
   has_many :author_comment_votes
+  has_ancestry
 
-  enum status: %i[unpublished published]
-  validates :body, presence: true, length: { minimum: 5 }
+
+  validates :body, presence: true
 
   def count_likes
     author_comment_votes.liked.count

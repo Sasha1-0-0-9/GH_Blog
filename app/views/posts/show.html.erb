@@ -36,7 +36,6 @@
 </p>
 
 <%= link_to 'Back', posts_path %>
-
 <% if !current_author.nil? && current_author.id == @post.author.id %>
       <%= link_to 'Edit', edit_post_path(@post) %>
       <%= link_to 'Destroy post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -49,7 +48,7 @@
 
 <div class='cont add_comment'>
   <h4>New Comment</h4>
-      <%= render 'posts/comment_form' %>
+      <%= render 'posts/comment_form' , parent_comment: nil%>
 </div>
 
 <div class='cont comment_list'>

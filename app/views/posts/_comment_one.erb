@@ -1,0 +1,60 @@
+ <%= stylesheet_link_tag 'posts', media: 'all' %>
+
+<div class='comment <%= "hidden_c" if comment.parent.present? %>'>
+  <div class='comment_ava float'>
+    <%= render "authors/avatar", author: comment.author %>
+  </div>
+  <div class='float'>
+      <b><%= comment.author.email || comment.author.full_name %></b>
+  </div>
+  <div id="comment_<%= comment.id%>" class='full'>
+        <div id="comment_<%= comment.id%>" class='full'>
+          <div class="votestatus">
+      <button name='like' data-comment_id="<%= comment.id%>" class=' vote btn btn-outline-success'><i>&#10004</i></button>
+      <i><%= comment.count_likes %></i>
+      <button name= 'dislike' data-comment_id="<%= comment.id%>" class=' vote btn btn-outline-danger'><i>&#10006</i></button>
+      <i><%= comment.count_dislikes %></i>
+      <br>
+    </div>
+      <%if comment.created_at < comment.updated_at%><b>edited</b> |<%end%>
+      <% less_than_hour = comment.created_at >= 1.hour.ago %>
+      <% time = distance_of_time_in_words(comment.created_at, Time.now)%>
+      <span class='block'><i> created  <%= time  %> ago</i></span>
+  </div>
+  <div class='comment_body'>
+    <%= comment.body %>
+  </div>    
+    <% if !current_author.nil? && current_author.id == comment.author.id && less_than_hour %>
+      <span class='comment_form_parent'>   
+        <button class='butn edit_comment'>Edit</button>
+        <div class='cont add_comment update_comment invisible'>
+          <h6>Edit Comment</h6>
+          <%= render 'posts/comment_form', comment: comment, parent_comment: comment.parent%>
+        </div>          
+        <i class='butn' id="down">
+          <%= link_to 'Delete', [comment.post, comment],
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }, remote: true %>
+        </i>
+      </span>
+    <% end %>
+    
+    <% if !current_author.nil?  %>
+       <span class='comment_form_parent'>
+        <span class='reply edit_comment'>Click to reply</span>
+        <div class='cont add_comment update_comment invisible'>
+        <br/>
+        <%= render 'posts/comment_form', parent_comment: comment%>
+      </div>
+    </span>
+    </span>
+    <%end%>
+
+    <% if comment.children.present? %>
+      <i class='fa fa-chevron-down open_children'></i>
+      <% comment.children.each do |child| %>   
+          <%= render 'posts/comment_one', comment: child%>
+      <% end %>  
+    <% end %>
+
+</div>

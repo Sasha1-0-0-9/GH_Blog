@@ -69,3 +69,5 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'jquery-rails'
 
 gem 'byebug'
+
+gem 'ancestry'
