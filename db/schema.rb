@@ -13,9 +13,13 @@
 ActiveRecord::Schema.define(version: 2021_01_07_215307) do
 
   create_table "author_comment_votes", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "comment_id"
     t.boolean "positive"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_author_comment_votes_on_author_id"
+    t.index ["comment_id"], name: "index_author_comment_votes_on_comment_id"
   end
 
   create_table "authors", force: :cascade do |t|
