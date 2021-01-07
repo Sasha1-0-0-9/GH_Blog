@@ -10,9 +10,9 @@
   <div id="comment_<%= comment.id%>" class='full'>
         <div id="comment_<%= comment.id%>" class='full'>
           <div class="votestatus">
-      <button name='like' data-comment_id="<%= comment.id%>" class=' vote btn btn-outline-success'><i>&#10004</i></button>
+      <button name='true' data-comment_id="<%= comment.id%>" class='like vote btn btn-outline-success'><i>&#10004</i></button>
       <i><%= comment.count_likes %></i>
-      <button name= 'dislike' data-comment_id="<%= comment.id%>" class=' vote btn btn-outline-danger'><i>&#10006</i></button>
+      <button name= 'false' data-comment_id="<%= comment.id%>" class='dislike vote btn btn-outline-danger'><i>&#10006</i></button>
       <i><%= comment.count_dislikes %></i>
       <br>
     </div>
