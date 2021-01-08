@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_215307) do
+ActiveRecord::Schema.define(version: 2021_01_08_102612) do
 
   create_table "author_comment_votes", force: :cascade do |t|
-    t.integer "author_id"
     t.integer "comment_id"
+    t.integer "author_id"
     t.boolean "positive"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
