@@ -4,7 +4,6 @@ class Comment < ApplicationRecord
   has_many :author_comment_votes
   has_ancestry
 
-
   validates :body, presence: true
 
   def count_likes
